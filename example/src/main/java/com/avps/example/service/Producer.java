@@ -1,0 +1,28 @@
+package com.avps.example.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+import com.avps.example.model.User;
+
+@Service
+public class Producer {
+
+	private static final String TOPIC = "test_topic";
+
+//	@Autowired
+//	private KafkaTemplate<String, String> kafkaTemplate;
+//
+//	public void sendMessages(String message) {
+//		this.kafkaTemplate.send(TOPIC, message);
+//	}
+//	
+
+	@Autowired
+	private KafkaTemplate<String, User> kafkaTemplate;
+
+	public void sendMessages(User user) {
+		this.kafkaTemplate.send(TOPIC, new User(user.getFirstname(), user.getLastname()));
+	}
+}

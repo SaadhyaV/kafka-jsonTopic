@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+
+
+<script src="index.js" type="text/javascript"></script> 
+</head>
+<body>
+<div ng-controller="dataCtrl">
+	<form ng-submit="submit()">
+		<h1>Please fill in the form: </h1>
+		Username: <input type="text" ng-model="user.firstname" name="firstname">
+		<br/><br/><br/>
+		Lastname: <input type="text" ng-model="user.lastname" name="lastname">
+		<br/><br/><br/>
+		
+		<input type="submit" value="submit">
+	</form>
+</div>
+</body>
+</html>
